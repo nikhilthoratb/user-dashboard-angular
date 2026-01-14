@@ -1,0 +1,50 @@
+<div class="backdrop" (click)="closeModal()"></div>
+
+<div class="modal">
+  <h3>Add User</h3>
+
+  <form [formGroup]="userForm" (ngSubmit)="submit()">
+
+    <div class="field">
+      <label>Name</label>
+      <input type="text" formControlName="name" />
+
+      @if (userForm.get('name')?.touched && userForm.get('name')?.invalid) {
+        <small>Name is required</small>
+      }
+    </div>
+
+    <div class="field">
+      <label>Email</label>
+      <input type="email" formControlName="email" />
+
+      @if (userForm.get('email')?.touched && userForm.get('email')?.invalid) {
+        <small>Enter a valid email</small>
+      }
+    </div>
+
+    <div class="field">
+      <label>Role</label>
+      <select formControlName="role">
+        <option value="">Select role</option>
+        <option>Admin</option>
+        <option>Editor</option>
+        <option>Viewer</option>
+      </select>
+
+      @if (userForm.get('role')?.touched && userForm.get('role')?.invalid) {
+        <small>Role is required</small>
+      }
+    </div>
+
+    <div class="actions">
+      <button type="button" class="cancel" (click)="closeModal()">
+        Cancel
+      </button>
+      <button type="submit" class="save">
+        Save
+      </button>
+    </div>
+
+  </form>
+</div>

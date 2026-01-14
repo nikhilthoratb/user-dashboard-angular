@@ -1,0 +1,72 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 24px;
+  width: 400px;
+  border-radius: 6px;
+  z-index: 10;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+
+  label {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  input,
+  select {
+    height: 48px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  small {
+    color: #d32f2f;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+
+  .cancel {
+    background: transparent;
+    border: 1px solid #999;
+    height: 48px;
+    padding: 0 16px;
+    cursor: pointer;
+  }
+
+  .save {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    height: 48px;
+    padding: 0 20px;
+    cursor: pointer;
+  }
+}
